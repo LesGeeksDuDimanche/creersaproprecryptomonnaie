@@ -95,7 +95,7 @@ git clone -b 0.8 https://github.com/litecoin-project/litecoin.git
             <section>
                 <h2>corrections problème vieux paquet</h2>
                 <p>
-                    src/rawtransaction.cpp
+                    src/rpcrawtransaction.cpp
                     <br>ligne 242
                     <br>Enlever : & et const
                 </p>
@@ -147,10 +147,10 @@ make -f makefile.unix
             <section>
                 <h2>PORT P2P</h2>
                 <p>#/home/USER/BricoCoin/src/</p>
-                <p>On remplace les ports de litecoin 9333/9332 par 2333/2332 (aléatoire)</p>
+                <p>On remplace les ports de litecoin 9333/9332 par 6333/6332 (aléatoire)</p>
                 <pre><code data-trim data-noescape class="shell hljs livecodeserver">
-find . -type f -print0 | xargs -0 sed -i 's/9333/2333/g'
-find . -type f -print0 | xargs -0 sed -i 's/9332/2332/g'
+find . -type f -print0 | xargs -0 sed -i 's/9333/6333/g'
+find . -type f -print0 | xargs -0 sed -i 's/9332/6332/g'
                 </code></pre>
             </section>
             <section>
@@ -292,7 +292,6 @@ static const int64 nTargetSpacing = <mark>2</mark> * 60; // BricoCoin: 2 minutes
             <section>
                 <h2>Correction</h2>
                 <p>main.cpp ligne 2787</p>
-                <p>Pourquoi c'est à deux endroits du code ? NO IDEA</p>
                 <pre><code data-trim data-noescape class="shell hljs livecodeserver">
 txNew.vout[0].nValue = <mark>10</mark> * COIN;
                 </code></pre>
@@ -350,7 +349,7 @@ return dPriority > COIN * <mark>5</mark> / 250;
                 <h2>timeStamp</h2>
                 <p>main.cpp 2782</p>
                 <pre><code data-trim data-noescape class="shell hljs livecodeserver">
-const char* pszTimestamp = "25/01/2018 Débat autour des cryptomonnaies et les monnaies locales complémentaires!";
+const char* pszTimestamp = "25/01/2018 Atelier créer sa propre crypto-monnaie";
                 </code></pre>
             </section>
             <section>
@@ -650,6 +649,9 @@ make
           </section>
           <section>
             <p>
+                <a href="http://lesbricodeurs.fr/creersaproprecryptomonnaie/">http://lesbricodeurs.fr/creersaproprecryptomonnaie/</a>
+              </p>
+        <p>
             Autre tuto : <br>
               <a href="https://vcoin-project.github.io/cloning-litecoin/">https://vcoin-project.github.io/cloning-litecoin/</a>
             </p>
